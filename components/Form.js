@@ -23,7 +23,6 @@ const Form = () => {
 
       const json = await res.json();
       
-
       if (res.ok) {
         setMessage("✅ Note Added Successful");
         setTitle("");
