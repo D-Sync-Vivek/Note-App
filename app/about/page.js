@@ -1,14 +1,26 @@
-import React from 'react'
+import React from "react";
 
 const about = () => {
   return (
     <>
-    <main className='md:w-1/2 m-3 md:mx-auto bg-white p-5 py-10 rounded-xl mt-10'>
-        <div className='font-semibold text-4xl flex h-20 justify-center items-center'>About Page</div>
-        <section>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Consequatur dolores deleniti odit commodi rem laborum, consectetur rerum deserunt eius assumenda.</section>
-    </main>
+      <div className="flex flex-col items-center w-[90vw] m-auto">
+        <div className="text-center mt-10 text-3xl font-semibold mb-3">
+          About Notes App 📝
+        </div>
+        <div className="text-gray-600 mb-4">
+          Welcome to <span className="font-semibold text-black">Notes App</span> — your
+          simple place to jot down thoughts, reminders, and ideas.
+        </div>
+        <ul className="list-disc p-3 text-gray-700 space-y-2">
+           <li>Create notes instantly with a title and content.</li>
+          <li>See all your saved notes in a clean list view.</li>
+          <li>Delete notes easily when you no longer need them.</li>
+          <li>If it’s empty, just click <span className="font-bold">“Add Note”</span>to get started.</li>
+        </ul>
+        <p className="mt-6 text-gray-600">I have built this app to be fast, lightweight, and easy to use - so you can focus on your idead, not the tool.</p>
+      </div>
     </>
-  )
-}
+  );
+};
 
-export default about
+export default about;

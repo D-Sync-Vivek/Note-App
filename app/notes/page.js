@@ -1,87 +1,12 @@
-"use client";
-import React from "react";
-import { useEffect, useState } from "react";
-import { toast, ToastContainer } from "react-toastify";
-const page = () => {
-  const [notes, setNotes] = useState([]);
-  const [loading, setLoading] = useState(true);
+import React from 'react'
+import Note from '@/components/Notes'
 
-  useEffect(() => {
-    const fetchNotes = async () => {
-      try {
-        const res = await fetch("/api/notes");
-        const json = await res.json();
-        setNotes(json.data);
-      } catch (err) {
-        console.error("Error fetching notes : ", err);
-      } finally {
-        setLoading(false);
-      }
-    };
-
-    fetchNotes();
-  }, [notes]);
-
-  const deleteNote = async (id) => {
-    try {
-      console.log("Entered in try function");
-      const res = await fetch(`/api/notes/${id}`, {
-        method: "DELETE",
-      });
-
-      const json = await res.json();
-      if (res.ok) {
-        toast("Note Delete");
-      } else {
-       toast("Error Deleting Note")
-      }
-    } catch (err) {
-      console.error("Error Deleting the Note.");
-    }
-  };
-
+const Notes = () => {
   return (
-    <>
-      <ToastContainer
-        position="top-right"
-        autoClose={5000}
-        hideProgressBar={false}
-        newestOnTop={false}
-        closeOnClick={false}
-        rtl={false}
-        pauseOnFocusLoss
-        draggable
-        pauseOnHover
-        theme="dark"
-        />
-      <div className="flex flex-col justify-center items-center mt-10 md:w-1/2 md:mx-auto m-3 rounded-xl p-3 py-10 bg-white">
-        <h1 className="text-2xl font-semibold mb-5">All Notes</h1>
-        {loading ? (
-          <p>Loading...</p>
-        ) : (
-          <ul>
-            {notes.map((note) => (
-              <li key={note._id} className="flex gap-2">
-                <strong>{note.title}</strong> : {note.content}
-                <div
-                  className="rounded-md hover:bg-gray-200"
-                  onClick={() => deleteNote(note._id)}
-                >
-                  <lord-icon
-                    src="https://cdn.lordicon.com/jzinekkv.json"
-                    trigger="hover"
-                    colors="primary:#242424,secondary:#242424"
-                    style={{ width: "20px", height: "20px" }}
-                  ></lord-icon>
-                </div>
-              </li>
-            ))}
-          </ul>
-        )}
-      </div>
-      
-    </>
-  );
-};
+    <div>
+      <Note/>
+    </div>
+  )
+}
 
-export default page;
+export default Notes
