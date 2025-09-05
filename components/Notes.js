@@ -3,12 +3,10 @@ import Link from "next/link";
 import { useEffect, useState } from "react";
 import { toast, ToastContainer } from "react-toastify";
 
-
-
 const page = () => {
   const [notes, setNotes] = useState([]);
   const [loading, setLoading] = useState(true);
-
+  const [expanded, setExpanded] = useState(false)
 
   useEffect(() => {
     const fetchNotes = async () => {
@@ -67,7 +65,7 @@ const page = () => {
             {notes.length === 0 && (
               <div className="text-center">
                 <div>Empty Here</div>
-               
+
                 <Link
                   href="/?focus=title"
                   className="underline text-blue-400 text-center decoration-wavy hover:text-blue-700"
@@ -79,12 +77,26 @@ const page = () => {
             {notes.map((note) => (
               <li
                 key={note._id}
-                className="flex gap-2 w-[80vw] md:w-[20vw] justify-between border-1 border-gray-200 mb-1 p-2 rounded-md items-center"
+                className="flex gap-2 w-[80vw] md:w-[45vw] justify-between border-1 border-gray-200 mb-1 p-2 rounded-md items-start"
               >
-                <strong>{note.title}</strong> {note.content}
-                
                 <div
-                  className="rounded-md hover:bg-gray-200"
+                  className={`flex flex-col transition-all duration-300 ${
+                    expanded ? "w-[80vw] md:[50vw]" : "max-w-[200px]"
+                  }`}
+                  onClick={() => setExpanded(!expanded)}
+                >
+                  <strong>{note.title}</strong>
+                  <p
+                    className={`${
+                      expanded ? "break-words whitespace-pre-wrap" : "truncate"
+                    }`}
+                  >
+                    {note.content}
+                  </p>
+                </div>
+
+                <div
+                  className="shrink-0 rounded-md hover:bg-gray-200"
                   onClick={() => deleteNote(note._id)}
                 >
                   <lord-icon
