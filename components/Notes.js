@@ -81,7 +81,7 @@ const page = () => {
               >
                 <div
                   className={`flex flex-col transition-all duration-300 ${
-                    expanded ? "w-[80vw] md:[50vw]" : "max-w-[200px]"
+                    expanded ? "w-[69vw] md:[50vw]" : "max-w-[200px]"
                   }`}
                   onClick={() => setExpanded(!expanded)}
                 >
@@ -103,7 +103,7 @@ const page = () => {
                     src="https://cdn.lordicon.com/jzinekkv.json"
                     trigger="hover"
                     colors="primary:#242424,secondary:#242424"
-                    style={{ width: "20px", height: "20px" }}
+                    style={{ width: "25px", height: "25px" }}
                   ></lord-icon>
                 </div>
               </li>
