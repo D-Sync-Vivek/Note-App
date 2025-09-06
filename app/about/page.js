@@ -1,6 +1,6 @@
 import React from "react";
 
-const about = () => {
+const About = () => {
   return (
     <>
       <div className="flex flex-col items-center w-[90vw] m-auto">
@@ -23,4 +23,4 @@ const about = () => {
   );
 };
 
-export default about;
+export default About;

@@ -3,7 +3,7 @@ import Link from "next/link";
 import { useEffect, useState } from "react";
 import { toast, ToastContainer } from "react-toastify";
 
-const page = () => {
+const Page = () => {
   const [notes, setNotes] = useState([]);
   const [loading, setLoading] = useState(true);
   const [expanded, setExpanded] = useState(false)
@@ -115,4 +115,4 @@ const page = () => {
   );
 };
 
-export default page;
+export default Page;
