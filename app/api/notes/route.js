@@ -1,10 +1,11 @@
 import dbConnect from "@/lib/dbConnect";
 import Note from "@/models/Note";
+import { NextResponse } from "next/server";
 
 export async function GET() {
   await dbConnect(); // ensures DB collection
   const data = await Note.find();
-  return Response.json({ data });
+  return NextResponse.json({ data });
 }
 
 export async function POST(request) {
@@ -16,7 +17,7 @@ export async function POST(request) {
     content: body.content,
   });
 
-  return Response.json({
+  return NextResponse.json({
     success: true,
     message: "Note added successfully",
     data: doc,
