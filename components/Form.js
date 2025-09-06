@@ -41,7 +41,7 @@ const Form = () => {
         setMessage("❌ Error: " + json.message);
       }
     } catch (err) {
-      console.error("Error submitting note:", err);
+      // console.error("Error submitting note:", err);
       setMessage("❌ Something went wrong.");
     } finally {
       setLoading(false);

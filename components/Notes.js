@@ -81,7 +81,7 @@ const page = () => {
               >
                 <div
                   className={`flex flex-col transition-all duration-300 ${
-                    expanded ? "w-[69vw] md:[50vw]" : "max-w-[200px]"
+                    expanded ? "w-[69vw] md:w-[40vw]" : "max-w-[200px]"
                   }`}
                   onClick={() => setExpanded(!expanded)}
                 >

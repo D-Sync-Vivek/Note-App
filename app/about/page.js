@@ -17,7 +17,7 @@ const about = () => {
           <li>Delete notes easily when you no longer need them.</li>
           <li>If it’s empty, just click <span className="font-bold">“Add Note”</span>to get started.</li>
         </ul>
-        <p className="mt-6 text-gray-600">I have built this app to be fast, lightweight, and easy to use - so you can focus on your idead, not the tool.</p>
+        <p className="mt-6 text-gray-600">I have built this app to be fast, lightweight, and easy to use - so you can focus on your idea, not the tool.</p>
       </div>
     </>
   );
