@@ -1,4 +1,4 @@
-# 📝 Notes CRUD App
+# 📝 Notes  App
 
  A simple yet powerful **Notes Application** built with **Next.js** and **MongoDB.**  
  This project demonstrates how to create, read, and delete with a clean UI and smooth user experience.
