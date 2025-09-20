@@ -26,6 +26,19 @@
 
 - **Deployment Ready:** Easily host on Vercel or any Node.js server
 
+## 📸 Screenshots
+### Home Page
+![Homepage](/public/homepage.png)
+
+### Notes Page
+![Notespage](/public/notespage.png)
+
+### About Page
+![Aboutpage](/public/aboutpage.png)
+
+### Contact Page
+![Contactpage](/public/contactpage.png)
+
 
 ## 🌟 Why This Project is Useful
 
